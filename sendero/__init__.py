@@ -1,6 +1,15 @@
 import json
 
 
+def _stringify(it):
+    if isinstance(it, str):
+        return it
+    elif isinstance(it, int) or isinstance(it, float):
+        return str(it)
+    else:
+        return json.dumps(it)
+
+
 def get(
     data,
     path,
@@ -71,7 +80,7 @@ def get(
         results = [it for it in results if it != None and it != ""]
 
     if unique or sort or stringify:
-        results = [[it, json.dumps(it)] for it in results]
+        results = [[it, _stringify(it)] for it in results]
 
         # sort results by string version
         if sort:

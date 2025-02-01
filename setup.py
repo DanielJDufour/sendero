@@ -11,7 +11,7 @@ setup(
     packages=["sendero"],
     package_dir={"sendero": "sendero"},
     package_data={"sendero": ["__init__.py"]},
-    version="0.1.0",
+    version="0.2.0",
     description="sendero - data filtering for humans",
     long_description=long_description,
     long_description_content_type="text/markdown",
